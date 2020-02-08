@@ -1,0 +1,37 @@
+L'outil "Colaboratory" de Google est un outil collaboratif de développement. 
+Basée sur la plateforme Jupyter et écrit dans le langage Python, 
+cette plateforme permet à un groupe de développeurs d'écrire du code pour un même projet 
+grâce à un système de netbooks et de cellules de code. 
+
+L'outil est pleinement intégré dans la famille des outils Google. 
+
+Il est possible de faire appel aux autres services pour utiliser un fichier local ou alors de mettre en ligne un fichier depuis son ordinateur.
+
+Le service de stockage Google Drive permet de conserver en ligne ses fichiers afin de les retrouver sur n'importe quel appareil lié à son compte Google.
+
+Il est possible de monter son lecteur Google Drive dans l'interface de Colobotary. 
+
+Pour effectuer cette opération, ouvrez une cellule de code et copiez le code suivant à l'intérieur :
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+Exécutez la cellule de code et votre lecteur Google Drive sera accessible depuis l'interface de Colaboratory. Vous pourrez ainsi manipuler les fichiers.
+
+Il est également possible de mettre en ligne un fichier stocké sur votre ordinateur. 
+L'interface "google.colab" fournit la classe "files" dédiée à la gestion des fichiers. Avec la méthode "upload()", vous pouvez initier un envoi de fichiers depuis votre ordinateur vers le colaboratory.
+
+from google.colab import files
+files.upload()
+
+
+L'opération inverse est également possible :
+ 
+La méthode "download()" permet de télécharger le fichier dont le nom est indiqué en paramètres sur votre ordinateur.
+
+from google.colab import files
+files.download('monFichier')
+
+
+Pour retirer l'accès au drive google : 
+drive.flush_and_unmount()
